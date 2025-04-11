@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  vue_test:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: archilitav/vue_test:latest
+    container_name: vue_test
+    ports:
+      - "8080:80"
