@@ -9,7 +9,7 @@
 </template>
 
 <script setup>
-import { ref, defineComponent  } from 'vue'
+import { ref } from 'vue'
 
 const count = ref(0)
 
