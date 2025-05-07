@@ -7,18 +7,20 @@ const packageJson = require('../package.json');
 const devConfig = {
     mode: 'development',
     // entry: './src/main.js',
-    // output: {
-    //     path: path.resolve(__dirname, 'dist'),
-    //     filename: '[name].[contenthash].vue',
-    //     publicPath: '/',
-    // },
+    output: {
+        filename: '[name].js',
+        publicPath: 'http://localhost:4201/',
+    },
+    resolve: {
+        extensions: ['.js', '.jsx'],
+    },
     devtool: 'inline-source-map',
     devServer: {
-        static: path.resolve(__dirname, 'dist'),
+        static: path.resolve(__dirname, '../dist'),
         hot: true,
         liveReload: true,
         compress: true,
-        port: 4200,
+        port: 4201,
         historyApiFallback: true,
         open: true,
     },
@@ -27,7 +29,7 @@ const devConfig = {
             name: 'vuetest',
             filename: 'remoteEntry.js',
             exposes: {
-                './VueTestApp': './src/main',
+                './VueTestApp': './src/bootstrap',
             },
             shared: {
                 vue: {
