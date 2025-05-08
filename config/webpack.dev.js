@@ -7,12 +7,10 @@ const packageJson = require('../package.json');
 const devConfig = {
     mode: 'development',
     // entry: './src/main.js',
+    target: 'web',
     output: {
         filename: '[name].js',
         publicPath: 'http://localhost:4201/',
-    },
-    resolve: {
-        extensions: ['.js', '.jsx'],
     },
     devtool: 'inline-source-map',
     devServer: {
@@ -30,6 +28,9 @@ const devConfig = {
             filename: 'remoteEntry.js',
             exposes: {
                 './VueTestApp': './src/bootstrap',
+            },
+            remotes: {
+                dashboard_test: 'dashboard_test@http://localhost:3005/remoteEntry.js',
             },
             shared: {
                 vue: {
