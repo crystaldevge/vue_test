@@ -9,6 +9,7 @@ const devConfig = {
     // entry: './src/main.js',
     target: 'web',
     output: {
+        path: path.resolve(__dirname, '../dist'),
         filename: '[name].js',
         publicPath: 'http://localhost:4201/',
     },
@@ -24,7 +25,7 @@ const devConfig = {
     },
     plugins: [
         new ModuleFederationPlugin({
-            name: 'vuetest',
+            name: 'vue_test',
             filename: 'remoteEntry.js',
             exposes: {
                 './VueTestApp': './src/bootstrap',

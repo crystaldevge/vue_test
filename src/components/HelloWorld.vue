@@ -3,7 +3,7 @@
     <h2 class="text-xl font-bold mb-2">This is Vue Page</h2>
     <p class="text-2xl mb-4">{{ count }}</p>
     <button @click="toggle" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
-      Add +1
+      Click
     </button>
   </div>
   <div v-if="isVisible" class="p-4 mt-4 rounded bg-gray-100 shadow-md w-64 text-center">
