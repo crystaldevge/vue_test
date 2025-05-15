@@ -7,7 +7,7 @@ const mount = (el) => {
   app.mount(el);
 };
 
-// Standalone mode
+
 if (document.querySelector('#app')) {
   mount(document.querySelector('#app'));
 }
